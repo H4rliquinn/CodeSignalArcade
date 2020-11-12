@@ -5,7 +5,3 @@ function centuryFromYear(year) {
     }
     return century+1;
 }
-
-console.log(centuryFromYear(1901));
-console.log(centuryFromYear(1900));
-console.log(centuryFromYear(1432));
