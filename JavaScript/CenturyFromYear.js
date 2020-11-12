@@ -1,7 +1,11 @@
 function centuryFromYear(year) {
-    let century=year/100-1;
+    let century=Math.floor(year/100)
     if (year-century*100==00){
-        century+=1
+        return century;
     }
-    return century;
+    return century+1;
 }
+
+console.log(centuryFromYear(1901));
+console.log(centuryFromYear(1900));
+console.log(centuryFromYear(1432));
