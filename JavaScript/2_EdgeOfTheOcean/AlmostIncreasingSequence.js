@@ -2,7 +2,7 @@ function almostIncreasingSequence(sequence) {
     let highest=Number.NEGATIVE_INFINITY;
     let strike=0;
     for(let x=0;x<sequence.length;x++){
-      if (sequence[x]>=highest){
+      if (sequence[x]>highest){
         highest=sequence[x];
       } else  {
         strike++;
