@@ -8,7 +8,11 @@ function almostIncreasingSequence(sequence) {
         highest=sequence[x];
       } else if (sequence[x]>rollback) {
         highest=sequence[x];
+        strike++;
       } else {
+        return false;
+      }
+      if (strike>1){
         return false;
       }
     }
@@ -18,9 +22,13 @@ function almostIncreasingSequence(sequence) {
 let sec=[1,3,2,1];
 let sec2=[1,3,2];
 let sec3=[1, 2, 1, 2];
+let sec4=[3, 6, 5, 8, 10, 20, 15];
+
 
 console.log(almostIncreasingSequence(sec));
 console.log();
 console.log(almostIncreasingSequence(sec2));
 console.log();
 console.log(almostIncreasingSequence(sec3));
+console.log();
+console.log(almostIncreasingSequence(sec4));
