@@ -13,7 +13,7 @@ function almostIncreasingSequence(sequence) {
         return false;
       }
       if (strike>1){
-        return false;
+        strike++;
       }
     }
     return true;
