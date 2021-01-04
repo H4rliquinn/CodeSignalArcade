@@ -11,13 +11,11 @@ function allLongestStrings(inputArray) {
          longest=inputArray[item].length;
      }
  }
-
- console.log(library);
- console.log(longest);
+ return library[longest];
 }
 
-allLongestStrings(["aba", 
+console.log(allLongestStrings(["aba", 
 "aa", 
 "ad", 
 "vcd", 
-"aba"]);
+"aba"]));
