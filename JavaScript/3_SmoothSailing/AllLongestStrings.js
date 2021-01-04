@@ -7,9 +7,13 @@ function allLongestStrings(inputArray) {
      }else{
         library[inputArray[item].length]=[inputArray[item]];
      }
+     if (inputArray[item].length>longest){
+         longest=inputArray[item].length;
+     }
  }
 
  console.log(library);
+ console.log(longest);
 }
 
 allLongestStrings(["aba", 
