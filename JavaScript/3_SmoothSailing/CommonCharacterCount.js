@@ -10,7 +10,7 @@ function commonCharacterCount(s1, s2) {
     }
     
     for (let chr in s2){
-        if (lib[s2[chr]] !== undefined && lib[s2[chr]]>1){
+        if (lib[s2[chr]] !== undefined && lib[s2[chr]]>0){
             common+=1;
             lib[s2[chr]]-=1;
         }
@@ -21,4 +21,4 @@ function commonCharacterCount(s1, s2) {
 let s1 = "aabcc"
 let s2 = "adcaa"
 
-commonCharacterCount(s1,s2);
+console.log(commonCharacterCount(s1,s2));
