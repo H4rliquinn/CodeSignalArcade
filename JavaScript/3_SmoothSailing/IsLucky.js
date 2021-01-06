@@ -6,9 +6,7 @@ function isLucky(n) {
         left+=parseInt(digits[x]);
         right+=parseInt(digits[digits.length-x-1]);
     }
-    console.log(left);
-    console.log(right);
-    return true;
+    return left==right;
 }
 
 let n1=1230;
