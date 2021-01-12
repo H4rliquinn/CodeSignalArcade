@@ -1,9 +1,22 @@
 function reverseInParentheses(inputString) {
     let start=-1;
     let end=-1;
+    let builder="";
+    let queue=[];
+    let rev=false;
 
     for (let x in inputString){
-        console.log(inputString[x]);
+        if (inputString[x]==="("){
+            queue.push(builder);
+        } else if (inputString[x]===")"){
+
+        } else if (rev===true){
+
+        } else {
+            
+        }
+
+        // console.log(inputString[x]);
     }
 }
 
