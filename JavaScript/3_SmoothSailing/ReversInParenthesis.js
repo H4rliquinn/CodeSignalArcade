@@ -8,20 +8,23 @@ function reverseInParentheses(inputString) {
     for (let x in inputString){
         if (inputString[x]==="("){
             queue.push(builder);
+            builder="";
             rev++;
         } else if (inputString[x]===")"){
             rev--;
-            if (rev){
-                console.log("rev TRUE");
-                builder=builder+queue.pop();
+            if (rev>0){
+                builder=builder+reverseInParentheses("("+queue.pop()+")");
+                console.log(builder,1);
             } else {
                 builder=queue.pop()+builder;
+                console.log(builder,2);
             }
-        } else if (rev){
-            console.log("rev TRUE");
+        } else if (rev>0){
             builder=inputString[x]+builder;
+            console.log(builder,3);
         } else {
             builder=builder+inputString[x];
+            console.log(builder,4);
         }
         // console.log(inputString[x],builder);
     }
@@ -29,9 +32,9 @@ function reverseInParentheses(inputString) {
 }
 
 let is="(bar)";
-console.log(reverseInParentheses(is));
+// console.log(reverseInParentheses(is));
 is="f(bar)f";
-console.log(reverseInParentheses(is));
+// console.log(reverseInParentheses(is));
 is="foo(bar(baz))blim";
 console.log(reverseInParentheses(is));
-//foobazrabblim
+console.log("foobazrabblim!");
