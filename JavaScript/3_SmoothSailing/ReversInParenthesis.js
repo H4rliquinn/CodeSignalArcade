@@ -14,19 +14,14 @@ function reverseInParentheses(inputString) {
             rev--;
             if (rev>0){
                 builder=reverseInParentheses("("+builder+")")+queue.pop();
-                // console.log(builder,1);
             } else {
                 builder=queue.pop()+builder;
-                // console.log(builder,2);
             }
         } else if (rev>0){
             builder=inputString[x]+builder;
-            // console.log(builder,3);
         } else {
             builder=builder+inputString[x];
-            // console.log(builder,4);
         }
-        // console.log(inputString[x],builder);
     }
     return builder;
 }
