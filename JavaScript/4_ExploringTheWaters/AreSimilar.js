@@ -18,11 +18,7 @@ function areSimilar(a, b) {
             }
         }
     }
-    if (possSwitch==-1){
-        return true;
-    } else {
-        return false
-    }
+    return possSwitch==-1;
 }
 
 let a=[1,2,3];
