@@ -1,20 +1,28 @@
 function areSimilar(a, b) {
-    let library={};
+    let possSwitch=-1;
+    let switched=false;
+    
     for (let x in a){
-        if (a[x] in library){
-            library[a[x]]++;
-        } else {
-            library[a[x]]=1;
+        if (a[x] !== b[x]){
+            if (possSwitch==-1){
+                possSwitch=x;
+            } else if (switched==false) {
+                if (a[x]==b[possSwitch] && a[possSwitch]==b[x]){
+                    switched=true;
+                    possSwitch=-1;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
         }
     }
-    for (let y in b){
-        if (library[b[y]]==undefined || library[b[y]]==0){
-            return false;
-        } else {
-            library[b[y]]--;
-        }
+    if (possSwitch==-1){
+        return true;
+    } else {
+        return false
     }
-    return true;
 }
 
 let a=[1,2,3];
