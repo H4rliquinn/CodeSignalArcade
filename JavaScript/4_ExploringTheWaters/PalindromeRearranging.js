@@ -6,7 +6,7 @@ function palindromeRearranging(inputString) {
     for (let x in inputString){
         if (lib[inputString[x]]==1){
             lib[inputString[x]]=0;
-        } else {//if (lib[inputString[x]]==0 || lib[inputString[x]]==undefined)
+        } else {
             lib[inputString[x]]=1;
         }
     }
