@@ -13,5 +13,5 @@ function arrayMaximalAdjacentDifference(inputArray) {
 
 let ia=[2,4,1,0];
 console.log(arrayMaximalAdjacentDifference(ia));
-is=[-5,3,6,9,-1];
+ia=[-5,3,6,9,-1];
 console.log(arrayMaximalAdjacentDifference(ia));
