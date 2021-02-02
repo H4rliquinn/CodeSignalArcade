@@ -1,9 +1,19 @@
 function avoidObstacles(inputArray) {
  let current=0;
- for (let x=0;x<Math.max(...inputArray);x++){
-     console.log(x);
+ let out=Math.max(...inputArray)+1;
+ for (let x=2;x<=out;x++){ 
+     while (current<=out){
+         current+=x;
+         if (current>=out) return x;
+         if (inputArray.includes(current)){
+            current=0;
+            break;
+         } 
+     } 
  }
 }
 
 let ia=[5,3,6,7,9];
-console.log(avoidObstacles(ia));
+// console.log("ANS",avoidObstacles(ia));
+ia=[2,3]
+console.log("ANS",avoidObstacles(ia));
