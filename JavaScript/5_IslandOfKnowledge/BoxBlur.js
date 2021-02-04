@@ -1,14 +1,15 @@
 function boxBlur(image) {
-    let blurred=[];
-    //Find pixels Y axis
+    let retVal=[];
     for (let y=1;y<image.length-1;y++){
-        //Find pixels X axis
+        let rowArray=[];
         for (let x=1;x<image[y].length-1;x++){
-            //Send pixel values to helper function
-            console.log(image[y][x]);
+            rowArray.push(parseInt((image[y-1][x-1]+image[y-1][x]+image[y-1][x+1]
+                +image[y][x-1]+image[y][x]+image[y][x+1]
+                +image[y+1][x-1]+image[y+1][x]+image[y+1][x+1])/9));
         }
+        retVal.push(rowArray);
     }
-    //write to output
+    return retVal;
 }
 
 let i=[[1,1,1],
