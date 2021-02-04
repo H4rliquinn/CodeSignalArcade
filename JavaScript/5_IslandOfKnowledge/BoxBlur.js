@@ -1,0 +1,3 @@
+function boxBlur(image) {
+
+}
