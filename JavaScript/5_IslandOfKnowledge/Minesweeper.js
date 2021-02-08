@@ -1,6 +1,11 @@
 function minesweeper(matrix) {
  let retMtx=new Array(matrix.length).fill(0).map(()=>new Array(matrix.length).fill(0));
 
+ for (let y=0;y<matrix.length;y++){
+     for (let x=0;x<matrix[y].length;x++){
+         console.log(matrix[y][x]);
+     }
+ }
 
  return retMtx;
 }
