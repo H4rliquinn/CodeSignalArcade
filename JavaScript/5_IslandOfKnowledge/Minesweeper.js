@@ -1,5 +1,8 @@
 function minesweeper(matrix) {
- return matrix;
+ let retMtx=new Array(matrix.length).fill(0).map(()=>new Array(matrix.length).fill(0));
+
+
+ return retMtx;
 }
 
 let matrix = [[true, false, false],
