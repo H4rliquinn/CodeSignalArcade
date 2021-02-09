@@ -4,8 +4,13 @@ function minesweeper(matrix) {
  for (let y=0;y<len;y++){
      for (let x=0;x<len;x++){
          if (matrix[y][x]==true){
-            //  if (y>0 && y<len) matrix[y][x]++;
-            //  if (matrix[y-1][x]) matrix[y][x]++;
+            let countY=[0];
+            let countX=[0];
+            if (y>0)countY.push(-1);
+            if (y<len-1)countY.push(1);
+            if (x>0)countX.push(-1);
+            if (x<len-1)countX.push(1);
+            console.log(x,y,countY,countX);
 
          }
      }
