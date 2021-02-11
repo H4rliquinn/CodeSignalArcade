@@ -1,0 +1,3 @@
+function evenDigitsOnly(n) {
+
+}
