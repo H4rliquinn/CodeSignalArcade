@@ -1,0 +1,3 @@
+function variableName(name) {
+
+}
