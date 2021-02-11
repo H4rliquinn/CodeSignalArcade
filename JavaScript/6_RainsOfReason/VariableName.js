@@ -1,14 +1,13 @@
 function variableName(name) {
-    if(/^\D\w*/){
+    if(/^\D\w*$/.test(name)){
         return true;
     } else {
         return false;
     }
 }
-
 let nm="var_1__Int";
-variableName(nm);
+console.log(variableName(nm));
 nm="qq-q";
-variableName(nm);
+console.log(variableName(nm));
 nm="2w2";
-variableName(nm);
+console.log(variableName(nm));
