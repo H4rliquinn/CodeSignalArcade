@@ -1,8 +1,11 @@
 function alphabeticShift(inputString) {
     let retString="";
     for (let x in inputString){
-        // console.log(inputString[x]);
-        retString+=inputString[x];
+        if (inputString[x].charCodeAt()+1==123){
+            retString+='a';
+        } else {
+            retString+=String.fromCharCode(inputString[x].charCodeAt()+1);
+        }
     }
     return retString;
 }
