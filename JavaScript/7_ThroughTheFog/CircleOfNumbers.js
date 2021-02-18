@@ -1,6 +1,6 @@
 function circleOfNumbers(n, firstNumber) {
     let mid=n/2;
-    return n,firstNumber,mid;
+    return (mid+firstNumber)%n;
 }
 
 let n=10;
