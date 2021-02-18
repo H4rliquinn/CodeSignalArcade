@@ -1,0 +1,3 @@
+function circleOfNumbers(n, firstNumber) {
+
+}
