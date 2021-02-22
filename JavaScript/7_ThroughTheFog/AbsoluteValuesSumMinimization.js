@@ -1,10 +1,13 @@
 function absoluteValuesSumMinimization(a) {
+    let retVal=[];
+    for (let y=0;y<a.length;y++){
+        retVal.push(a.reduce((tot,curr)=>{ 
+            console.log(a[y],curr);
+            return tot+Math.abs(a[y]-curr)
+        },0));
+    }
 
-    let daMin=a.reduce((tot,curr)=>{ 
-        console.log(a[0],curr);
-        return tot+Math.abs(a[0]-curr)
-    },0);
-    console.log(daMin);
+    return retVal
 }
 
 let arr=[2,4,7];
