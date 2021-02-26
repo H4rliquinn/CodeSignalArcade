@@ -14,11 +14,23 @@ function oneApart(s1,s2){
     return true;
 }
 
-function stringsRearrangement(inputArray) {
-    for (let x=1;x<inputArray.length;x++){
-        console.log(oneApart(inputArray[x],inputArray[x-1]));
-        
+function permArray(ia,retVal){
+    for (let i=0;i<ia.length;i++){
+        retVal.push([ia[i]]);
+        // ia.splice(i,1);
+        // permArray
     }
+    return retVal
+}
+
+function stringsRearrangement(inputArray) {
+    //Find Array Permutations
+    console.log(permArray(inputArray,[]));
+    
+    //Check array
+    // for (let x=1;x<inputArray.length;x++){
+    //     console.log(oneApart(inputArray[x],inputArray[x-1])); 
+    // }
 }
 
 
