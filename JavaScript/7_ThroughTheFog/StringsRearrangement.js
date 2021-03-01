@@ -14,18 +14,21 @@ function oneApart(s1,s2){
     return true;
 }
 
-function permArray(ia,retVal){
+function permutationArray(ia,retVal){
+    if (ia.lengh==1) return ia[0];
+    
     for (let i=0;i<ia.length;i++){
-        retVal.push([ia[i]]);
-        // ia.splice(i,1);
-        // permArray
+        retVal.push(ia[i]);
+        let newArray=[...ia];
+        newArray.splice(i,1);
+        permutationArray(newArray,retVal)
     }
-    return retVal
+    return retVal;
 }
 
 function stringsRearrangement(inputArray) {
     //Find Array Permutations
-    console.log(permArray(inputArray,[]));
+    console.log(permutationArray(inputArray,[]));
     
     //Check array
     // for (let x=1;x<inputArray.length;x++){
@@ -35,5 +38,6 @@ function stringsRearrangement(inputArray) {
 
 
 let ia=["aba", "bbb", "bab"];
+ia=["aba", "bbb"];
 
 console.log(stringsRearrangement(ia));
