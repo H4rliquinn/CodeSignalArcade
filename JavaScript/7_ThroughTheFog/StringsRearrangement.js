@@ -18,7 +18,7 @@ function permutationArray(ia,retVal){
     if (ia.lengh==1) return ia[0];
     
     for (let i=0;i<ia.length;i++){
-        retVal.push(ia[i]);
+        // retVal.push(ia[i]);
         let newArray=[...ia];
         newArray.splice(i,1);
         permutationArray(newArray,retVal)
