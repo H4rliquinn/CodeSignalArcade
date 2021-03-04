@@ -16,25 +16,27 @@ function oneApart(s1,s2){
 
 function permutationArray(ia,curr,cache){
     if (ia.length==1) {
-        console.log("1 Left",ia,curr,cache);
         curr.push(ia[0]);
         cache.push(curr);
+        // console.log("1 Left",ia,curr,cache);
         return cache;
     }
     
     for (let i=0;i<ia.length;i++){
-        console.log("Loop",ia,curr,cache);
-        curr.push(ia[i]);
+        // console.log("Loop",ia,curr,cache);
         let newArray=[...ia];
+        let newCurr=[...curr];
+        newCurr.push(ia[i]);
         newArray.splice(i,1);
-        cache=permutationArray(newArray,curr,cache)
+        // console.log("After Loop",ia,newArray,newCurr,cache);
+        cache=permutationArray(newArray,newCurr,cache)
     }
     return cache;
 }
 
 function stringsRearrangement(inputArray) {
     //Find Array Permutations
-    console.log(permutationArray(inputArray,[],[]));
+    return permutationArray(inputArray,[],[]);
     
     //Check array
     // for (let x=1;x<inputArray.length;x++){
@@ -44,6 +46,6 @@ function stringsRearrangement(inputArray) {
 
 
 let ia=["aba", "bbb", "bab"];
-ia=["1", "2"];
+// ia=["1", "2"];
 
 console.log(stringsRearrangement(ia));
