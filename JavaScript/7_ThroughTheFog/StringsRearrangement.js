@@ -36,12 +36,18 @@ function permutationArray(ia,curr,cache){
 
 function stringsRearrangement(inputArray) {
     //Find Array Permutations
-    return permutationArray(inputArray,[],[]);
+    let combinations=permutationArray(inputArray,[],[]);
     
-    //Check array
-    // for (let x=1;x<inputArray.length;x++){
-    //     console.log(oneApart(inputArray[x],inputArray[x-1])); 
-    // }
+    // Check array
+    let flag=false;
+    for (let x=0;x<combinations.length;x++){
+        let found=true;
+        for (let i=1;conbinations[x].length;i++){
+            if (!oneApart(inputArray[x],inputArray[x-1])){
+                break;
+            } 
+        }
+    }
 }
 
 
