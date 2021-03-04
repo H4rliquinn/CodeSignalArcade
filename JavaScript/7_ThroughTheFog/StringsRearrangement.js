@@ -18,16 +18,16 @@ function permutationArray(ia,curr,cache){
     if (ia.lengh==1) {
         curr.push(ia[0]);
         cache.push(curr);
-        return;
+        return cache;
     }
     
     for (let i=0;i<ia.length;i++){
-        // retVal.push(ia[i]);
+        curr.push(ia[i]);
         let newArray=[...ia];
         newArray.splice(i,1);
-        permutationArray(newArray,retVal)
+        permutationArray(newArray,curr,cache)
     }
-    return retVal;
+    return cache;
 }
 
 function stringsRearrangement(inputArray) {
