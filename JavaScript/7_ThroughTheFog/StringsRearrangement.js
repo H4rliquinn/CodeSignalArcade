@@ -14,8 +14,12 @@ function oneApart(s1,s2){
     return true;
 }
 
-function permutationArray(ia,retVal){
-    if (ia.lengh==1) return ia[0];
+function permutationArray(ia,curr,cache){
+    if (ia.lengh==1) {
+        curr.push(ia[0]);
+        cache.push(curr);
+        return;
+    }
     
     for (let i=0;i<ia.length;i++){
         // retVal.push(ia[i]);
@@ -28,7 +32,7 @@ function permutationArray(ia,retVal){
 
 function stringsRearrangement(inputArray) {
     //Find Array Permutations
-    console.log(permutationArray(inputArray,[]));
+    console.log(permutationArray(inputArray,[],[]));
     
     //Check array
     // for (let x=1;x<inputArray.length;x++){
