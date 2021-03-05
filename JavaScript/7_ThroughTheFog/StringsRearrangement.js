@@ -37,17 +37,26 @@ function permutationArray(ia,curr,cache){
 function stringsRearrangement(inputArray) {
     //Find Array Permutations
     let combinations=permutationArray(inputArray,[],[]);
-    
+
     // Check array
     let flag=false;
     for (let x=0;x<combinations.length;x++){
         let found=true;
-        for (let i=1;conbinations[x].length;i++){
-            if (!oneApart(inputArray[x],inputArray[x-1])){
+        for (let i=1;i<combinations[x].length;i++){
+            console.log("Try",combinations[x][i],combinations[x][i-1]);
+            if (!oneApart(combinations[x][i],combinations[x][i-1])){
+                console.log("Not It");
+                found=false;
                 break;
             } 
         }
+        if (found) {
+            console.log("Found");
+            flag=true;
+            break;
+        }
     }
+    return flag;
 }
 
 
