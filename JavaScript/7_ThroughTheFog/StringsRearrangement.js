@@ -4,11 +4,12 @@ function oneApart(s1,s2){
     for (let x in s1){
         // console.log(s1[x],s2[x]);
         if (s1[x]!=s2[x]){
-            if (count<2){
+            if (count<1){
                 count++;
             } else {
                 return false;
             }
+            // console.log("count",count);
         }
     }
     return true;
@@ -37,10 +38,11 @@ function permutationArray(ia,curr,cache){
 function stringsRearrangement(inputArray) {
     //Find Array Permutations
     let combinations=permutationArray(inputArray,[],[]);
-
+    console.log("combs",combinations);
     // Check array
     let flag=false;
     for (let x=0;x<combinations.length;x++){
+        console.log("trying",combinations[x]);
         let found=true;
         for (let i=1;i<combinations[x].length;i++){
             console.log("Try",combinations[x][i],combinations[x][i-1]);
@@ -60,7 +62,8 @@ function stringsRearrangement(inputArray) {
 }
 
 
+
 let ia=["aba", "bbb", "bab"];
-// ia=["1", "2"];
+ia=["aba","abc","bbc"]
 
 console.log(stringsRearrangement(ia));
