@@ -1,4 +1,5 @@
 function oneApart(s1,s2){
+    if (s1==s2) return false;
     //Check if strings are one letter appart
     let count=0;
     for (let x in s1){
@@ -65,5 +66,5 @@ function stringsRearrangement(inputArray) {
 
 let ia=["aba", "bbb", "bab"];
 ia=["aba","abc","bbc"]
-
+ia=["q","q"]
 console.log(stringsRearrangement(ia));
