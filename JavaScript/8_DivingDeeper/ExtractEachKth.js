@@ -1,0 +1,3 @@
+function extractEachKth(inputArray, k) {
+
+}
