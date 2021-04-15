@@ -1,5 +1,11 @@
 function longestDigitsPrefix(inputString) {
-    return inputString.match(/\d+/)[0];
+    let retVal= inputString.match(/^\d+/);
+    if (retVal){
+        return retVal.toString();
+    } else {
+        return ""
+    }
+    
 }
 
 let is="123aa1";
