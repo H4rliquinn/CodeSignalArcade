@@ -1,5 +1,16 @@
 function digitDegree(n) {
-    return n;
+    let degree=0;
+
+    while(n>9){
+        let nums=n.toString().split("");
+        n=0;
+        for (let x in nums){
+            n+=parseInt(nums[x]);
+        }
+        degree++;
+    }
+
+    return degree;
 }
 
 let num=5;
