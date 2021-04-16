@@ -5,23 +5,25 @@ function isBeautifulString(inputString) {
     let currCount=0;
     let lastCount=0;
     for (let x in chars){
-        console.log(currChar,currCount,lastCount,chars[x].charCodeAt(0));
         if (chars[x].charCodeAt(0)==currChar){
             currCount++;
-        } else if (currChar!=97 && currCount>lastCount){
+        } else if (chars[x].charCodeAt(0)!=currChar+1){
             return false;
         } else {
             currChar=chars[x].charCodeAt(0)
             lastCount=currCount;
-            currCount=0;
+            currCount=1;
         }
+        if (currChar!=97 && currCount>lastCount){
+            return false;
+        } 
     }
     return true;
 }
 
 let s="bbbaacdafe";
-// console.log(isBeautifulString(s));
+console.log(isBeautifulString(s));
 s="aabbb";
 console.log(isBeautifulString(s));
 s="bbc";
-// console.log(isBeautifulString(s));
+console.log(isBeautifulString(s));
