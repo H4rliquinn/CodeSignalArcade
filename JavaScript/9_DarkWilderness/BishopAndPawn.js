@@ -1,5 +1,6 @@
 function bishopAndPawn(bishop, pawn) {
-    return bishop[0];
+    // return Math.abs(bishop[1]-pawn[1]);
+    return (Math.abs(bishop.charCodeAt(0)-pawn.charCodeAt(0)));
 }
 
 let bish="a1";
