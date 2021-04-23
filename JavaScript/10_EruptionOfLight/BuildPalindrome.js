@@ -22,7 +22,7 @@ function buildPalindrome(st) {
 
 let a="abcdc";
 console.log(buildPalindrome(a));
-a="abcdc";
+a="bbb";
 console.log(buildPalindrome(a));
-a="abcdc";
+a="aaba";
 console.log(buildPalindrome(a));
