@@ -12,17 +12,16 @@ function buildPalindrome(st) {
             }
         }
         if (pal==false){
-            st=st+st[currAdd];
+            if (st[currAdd+1]!=st[currAdd-1]){
+                st=st+st[currAdd];
+            }
             currAdd--;
-            // console.log(st);
+            console.log(st,currAdd);
         }
     }
     return st;
 }
 
-let a="abcdc";
-console.log(buildPalindrome(a));
-a="bbb";
-console.log(buildPalindrome(a));
-a="aaba";
+let a="abcdcb";
+
 console.log(buildPalindrome(a));
