@@ -9,7 +9,7 @@ function buildPalindrome(st) {
             y=x-1;
             z=x+1;
             flag=true;
-            while (y!=0 && z!=st.length-1 && flag==true){
+            while (y!=-1 && z!=st.length-1 && flag==true){
                 y--;
                 z++
                 flag=st[y]==st[z];
