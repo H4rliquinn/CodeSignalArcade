@@ -1,7 +1,7 @@
 function buildPalindrome(st) {
     //Find Existing Middles
     let y=0,z,flag;
-    for (let x=1;x<st.length-1;x++){
+    for (let x=1;x<st.length;x++){
         // console.log(st[x-1],st[x+1]);
         if (st[x-1]==st[x+1]){
             //Found a middle
@@ -26,7 +26,7 @@ function buildPalindrome(st) {
                 y--;
                 z++
                 flag=st[y]==st[z];
-                console.log(st[y],y,st[z],z,flag);
+                // console.log(st[y],y,st[z],z,flag);
             }
             if(flag){
                 break;
@@ -45,5 +45,5 @@ function buildPalindrome(st) {
 
 let a="ababab";
 // a="abc";
-a="abbaa"
+a="abaa"
 console.log(buildPalindrome(a));
