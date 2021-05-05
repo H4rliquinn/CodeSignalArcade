@@ -1,49 +1,30 @@
 function buildPalindrome(st) {
-    //Find Existing Middles
-    let y=0,z,flag;
-    for (let x=1;x<st.length;x++){
-        // console.log(st[x-1],st[x+1]);
-        if (st[x-1]==st[x+1]){
-            //Found a middle
-            //Check if middle goes to end
-            y=x-1;
-            z=x+1;
-            flag=true;
-            while (y!=-1 && z!=st.length-1 && flag==true){
-                y--;
-                z++
-                flag=st[y]==st[z];
-                // console.log(st[y],st[z],flag);
-            }
-            if(flag){
-                break;
-            }
-        } else if (st[x-1]==st[x]){
-            y=x-1;
-            z=x;
-            flag=true;
-            while (y!=-1 && z!=st.length-1 && flag==true){
-                y--;
-                z++
-                flag=st[y]==st[z];
-                // console.log(st[y],y,st[z],z,flag);
-            }
-            if(flag){
-                break;
-            }            
+    function testPal(a){
+        for (let x=0;x<parseInt(a.length/2);x++){
+            // console.log(a[x],a[a.length-x-1]);
+            if (a[x]!=a[a.length-x-1]) return false;
         }
+        return true;
     }
-    if (y==0) y=st.length-1;
-    // console.log(y,z,flag);
-    //Add missing characters
-    while (y>0){
-        y--;
-        st+=st[y];
+
+    if (testPal(st)) return st;
+    
+    for (let x=0;x<st.length-1;x++){
+        let tempST=st;
+        
+        for (let y=x;y>-1;y--){
+            tempST+=st[y];
+        }
+        if (testPal(tempST)) return tempST;
+        // console.log(st[x],tempST);
+        tempST=st;
     }
-    return st;
+ 
 }
 
 let a="ababab";
-// a="abc";
-a="abaa"
+console.log(buildPalindrome(a));
+a="abc";
+console.log(buildPalindrome(a));
+a="aabbaa"
 console.log(buildPalindrome(a));
