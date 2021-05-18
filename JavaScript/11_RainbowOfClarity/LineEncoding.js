@@ -7,12 +7,20 @@ function lineEncoding(s) {
         if (cur==s[x]){
             cnt++;
         } else {
-            retVal+=cnt+cur;
+            if (cnt>1){
+                retVal+=cnt+cur;
+            } else {
+                retVal+=cur;
+            }
             cnt=1;
             cur=s[x];
         }
     }
-    retVal+=cnt+cur;
+    if (cnt>1){
+        retVal+=cnt+cur;
+    } else {
+        retVal+=cur;
+    }
     return retVal;
 }
 
