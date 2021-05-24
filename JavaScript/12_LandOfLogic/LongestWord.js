@@ -1,7 +1,7 @@
 function longestWord(text) {
     let largest=0
     let retVal="";
-    let words=text.match(/\b\w+\b/g);
+    let words=text.match(/\b[a-zA-Z]+\b/g);
     for (let x in words){
         if (words[x].length>largest){
             largest=words[x].length;
