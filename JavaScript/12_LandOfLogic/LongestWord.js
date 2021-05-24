@@ -1,6 +1,18 @@
 function longestWord(text) {
-    console.log(text.match(/\b\w+\b/g));
+    let largest=0
+    let retVal="";
+    let words=text.match(/\b\w+\b/g);
+    for (let x in words){
+        if (words[x].length>largest){
+            largest=words[x].length;
+            retVal=words[x];
+        }
+    }
+    return retVal;
 }
 
 let text = "Ready, steady, go!";
-longestWord(text);
+
+console.log(longestWord(text));
+text = "ab-CDE-fg_hi";
+console.log(longestWord(text));
