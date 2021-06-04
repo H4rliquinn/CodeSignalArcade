@@ -1,6 +1,6 @@
 function digitsProduct(product) {
- return 26;
+    if (product<10) return product;
 }
 
-let p=12;
+let p=8;
 console.log(digitsProduct(p));
