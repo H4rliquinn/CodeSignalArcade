@@ -1,17 +1,31 @@
 function fileNaming(names) {
     let lib={};
     let retArray=[];
-
     for (let x in names){
-        if (lib[names[x]]!=null){
-            retArray.push(names[x]+"("+lib[names[x]]+")");
-            lib[names[x]]++;
+        let dupFlag=false;
+        let tempName=names[x];
+        if (tempName.match(/\(\d\)$/)){
+            tempName=names[x].slice(0,-3);
+            dupFlag=true;
+        }
+        if (lib[tempName]!=null){
+            if (dupFlag==true){
+                if (lib[names[x]]!=null){
+                    retArray.push(names[x]+"("+lib[names[x]]+")");
+                    lib[names[x]]++;
+                } else {
+                    retArray.push(names[x]+"(1)");
+                    lib[names[x]]=1;
+                }
+            } else {
+                retArray.push(tempName+"("+lib[tempName]+")");
+                lib[tempName]++;
+            }
         } else {
-            retArray.push(names[x])
-            lib[names[x]]=1
+            retArray.push(tempName)
+            lib[tempName]=1
         }
     }
-    console.log(lib);
     return retArray;
 }
 
