@@ -1,0 +1,3 @@
+function fileNaming(names) {
+
+}
