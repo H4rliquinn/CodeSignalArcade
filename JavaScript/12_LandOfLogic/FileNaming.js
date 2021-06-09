@@ -8,24 +8,31 @@ function fileNaming(names) {
             tempName=names[x].slice(0,-3);
             dupFlag=true;
         }
-        if (lib[tempName]!=null){
+
+        if (lib[names[x]]==null){
+            retArray.push(names[x])
+            lib[names[x]]=1
+        } else {
             if (dupFlag==true){
-                if (lib[names[x]]!=null){
-                    retArray.push(names[x]+"("+lib[names[x]]+")");
-                    lib[names[x]]++;
+                if (lib[tempName]!=null){
+                    if (lib[tempName]>=parseInt(names[x].slice(-2,-1))){
+                        retArray.push(names[x]+"(1)");
+                        lib[names[x]]=1;
+                    } else {
+                        retArray.push(tempName+"("+lib[tempName]+")");
+                        lib[tempName]++;  
+                    }   
                 } else {
-                    retArray.push(names[x]+"(1)");
-                    lib[names[x]]=1;
+                    retArray.push(tempName+"(1)");
+                    lib[tempName]=1;
                 }
             } else {
-                retArray.push(tempName+"("+lib[tempName]+")");
-                lib[tempName]++;
+                retArray.push(names[x]+"("+lib[names[x]]+")");
+                lib[names[x]]++;
             }
-        } else {
-            retArray.push(tempName)
-            lib[tempName]=1
         }
     }
+    console.log(lib);
     return retArray;
 }
 
