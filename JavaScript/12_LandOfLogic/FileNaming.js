@@ -3,33 +3,30 @@ function fileNaming(names) {
     let retArray=[];
     for (let x in names){
         let dupFlag=false;
-        let tempName=names[x];
-        if (tempName.match(/\(\d\)$/)){
-            tempName=names[x].slice(0,-3);
+        let baseName=names[x];
+        if (baseName.match(/\(\d\)$/)){
+            baseName=names[x].slice(0,-3);
             dupFlag=true;
         }
-
-        if (lib[names[x]]==null){
-            retArray.push(names[x])
-            lib[names[x]]=1
-        } else {
-            if (dupFlag==true){
-                if (lib[tempName]!=null){
-                    if (lib[tempName]>=parseInt(names[x].slice(-2,-1))){
-                        retArray.push(names[x]+"(1)");
-                        lib[names[x]]=1;
-                    } else {
-                        retArray.push(tempName+"("+lib[tempName]+")");
-                        lib[tempName]++;  
-                    }   
+        if (baseName!=null){
+            if (retArray.includes(names[x])){
+                if (lib[names[x]]==null){
+                    retArray.push(names[x]+"(1)");
+                    lib[names[x]]=1;
                 } else {
-                    retArray.push(tempName+"(1)");
-                    lib[tempName]=1;
+                    while (retArray.includes(names[x]+"("+lib[names[x]]+")")){
+                        lib[names[x]]++;
+                    }
+                    retArray.push(names[x]+"("+lib[names[x]]+")");
+                    lib[names[x]]++;
                 }
             } else {
-                retArray.push(names[x]+"("+lib[names[x]]+")");
-                lib[names[x]]++;
+                retArray.push(names[x]);
+                lib[names[x]]=1;
             }
+        } else {
+            retArray.push(names[x]);
+            lib[names[x]]=1;
         }
     }
     console.log(lib);
