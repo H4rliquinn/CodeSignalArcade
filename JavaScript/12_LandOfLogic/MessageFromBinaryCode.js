@@ -2,13 +2,9 @@ function messageFromBinaryCode(code) {
     let retVal="";
     let pos=0;
     while (pos<code.length){
-        console.log(code.slice);
-
+        retVal+=getLetterFromBinary(code.slice(pos,pos+8));
         pos+=8;
     }
-    // retVal+=getLetterFromBinary(code);
-
-
     return retVal
 }
 
