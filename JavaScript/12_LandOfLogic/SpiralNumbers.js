@@ -1,0 +1,3 @@
+function spiralNumbers(n) {
+
+}
