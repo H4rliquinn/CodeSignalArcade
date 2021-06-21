@@ -15,7 +15,7 @@ function spiralNumbers(n) {
     let dir="R";
     let nxt={"R":"D","D":"L","L":"U","U":"R"};
     
-    while (curr<10){
+    while (curr<n**2+1){
         
         switch(dir){
             case "R":
@@ -54,12 +54,11 @@ function spiralNumbers(n) {
                 break;
         }
     }
-    // console.log(curr,dir);
     return retVal
 }
 
 
-let num=3;
+let num=9;
 let ans=spiralNumbers(num);
 for (let col in ans){
     console.log(ans[col]);
