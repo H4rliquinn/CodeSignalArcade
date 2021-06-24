@@ -1,15 +1,17 @@
 function sudoku(grid) {
     let usedRow=[];
     let usedCol={};
+    let usedSqr=[];
     //check lines
     for (let col in grid){
         for (let row in grid[col]){
+            // Check Row
             if (usedRow.includes(grid[col][row])){
                 return false;
             } else {
                 usedRow.push(grid[col][row]);
             }
-            // console.log(row);
+            // Check Col
             if (col==0){
                 usedCol[row]=[grid[col][row]];
             } else {
@@ -19,12 +21,23 @@ function sudoku(grid) {
                     usedCol[row].push(grid[col][row])
                 }
             }
+            // Check squares
+            let squareX=0;
+            let squareY=0;
+            if (col<3){
+                squareY=0;
+            } else if (col<6){
+                squareY=1;
+            } else {
+                squareY=2;
+            }
+
+        
         }
         usedRow=[];
     }
 
 
-    //check squares
 
     return true;
 }
