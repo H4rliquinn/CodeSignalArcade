@@ -3,20 +3,20 @@ function phoneCall(min1, min2_10, min11, s) {
     if (s>=min1){
         time+=1;
         s-=min1;
-    }
-    if (s>=min2_10){
-        let mins=parseInt(s/min2_10);
-        if (mins>9){
-            time+=9;
-            s-=9*min2_10;
-        } else {
-            time+=mins;
-            s-=mins*min2_10;
+        if (s>=min2_10){
+            let mins=parseInt(s/min2_10);
+            if (mins>9){
+                time+=9;
+                s-=9*min2_10;
+                if (s>=min11){
+                    mins=parseInt(s/min11);
+                    time+=mins;
+                }
+            } else {
+                time+=mins;
+                s-=mins*min2_10;
+            }
         }
-    }
-    if (s>=min11){
-        mins=parseInt(s/min11);
-        time+=mins;
     }
     return time;
 }
