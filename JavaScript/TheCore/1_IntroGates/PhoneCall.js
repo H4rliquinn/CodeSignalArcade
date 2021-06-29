@@ -1,7 +1,7 @@
 function phoneCall(min1, min2_10, min11, s) {
     let time=0;
     if (s>=min1){
-        time+=min1;
+        time+=1;
         s-=min1;
     }
     if (s>=min2_10){
@@ -14,7 +14,11 @@ function phoneCall(min1, min2_10, min11, s) {
             s-=mins*min2_10;
         }
     }
-    
+    if (s>=min11){
+        mins=parseInt(s/min11);
+        time+=mins;
+    }
+    return time;
 }
 
 let min1=3;
