@@ -1,8 +1,10 @@
 function lateRide(n) {
+    let retVal=0;
     let hrs=parseInt(n/60);
     let min=n%60;
-    console.log(hrs,min);
-    return 1
+    retVal+=addTwoDigits(hrs);
+    retVal+=addTwoDigits(min);
+    return retVal
 }
 
 function addTwoDigits(n) {
