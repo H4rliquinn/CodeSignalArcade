@@ -1,9 +1,12 @@
 function knapsackLight(value1, weight1, value2, weight2, maxW) {
-    let item1={v:value1,w:weight1,r:value1/weight1};
-    let item2={v:value2,w:weight2,r:value2/weight2};
+    let sack=0;
+    let items=[{v:value1,w:weight1,r:value1/weight1}];
+    items.push({v:value2,w:weight2,r:value2/weight2});
+    items.sort((a,b)=>{
+        return b.r-a.r;
+    })
 
-
-    return [item1,item2];
+    return sack;
 }
 
 let val1=10;
