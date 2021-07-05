@@ -1,0 +1,3 @@
+function isInfiniteProcess(a, b) {
+    
+}
