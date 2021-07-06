@@ -3,7 +3,7 @@ function tennisSet(score1, score2) {
     let min=Math.min(score1,score2);
 
     if (max==6 && min<5) return true;
-    else if (max>6 && max==min+2) return true;
+    else if (max==7 && min>4 && min<7) return true;
     return false;
 }
 
