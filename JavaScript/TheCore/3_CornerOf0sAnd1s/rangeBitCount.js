@@ -6,7 +6,14 @@ function rangeBitCount(a, b) {
         rangeArray.push(cur);
     }
     
-    return rangeArray;
+    retVal=0;
+    for (let x in rangeArray){
+        let curVal=rangeArray[x].toString(2).split("");
+        for (let y in curVal){
+            retVal+=parseInt(curVal[y]);
+        }
+    }
+    return retVal;
 }
 
 let a=2;
