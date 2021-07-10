@@ -1,0 +1,3 @@
+function rangeBitCount(a, b) {
+
+}
