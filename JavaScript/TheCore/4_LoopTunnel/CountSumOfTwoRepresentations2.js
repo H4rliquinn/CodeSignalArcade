@@ -1,9 +1,8 @@
 function countSumOfTwoRepresentations2(n, l, r) {
     let retVal=0;
     for (let x=l;x<=r;x++){
-        for (let y=x;y<=r;y++){
-            if (x+y==n) retVal++;
-        }
+        let test=n-x;
+        if (test<=r && test>=x) retVal++;
     }
     return retVal;
 }
