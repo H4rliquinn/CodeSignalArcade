@@ -2,10 +2,10 @@ function countSumOfTwoRepresentations2(n, l, r) {
     let retVal=0;
     for (let x=l;x<=r;x++){
         for (let y=x;y<=r;y++){
-            console.log(x,y);
+            if (x+y==n) retVal++;
         }
     }
-    
+    return retVal;
 }
 
 let n=6,l=2,r=4;
