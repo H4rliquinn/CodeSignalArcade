@@ -22,10 +22,13 @@ function lineUp(commands) {
                 students[1]=abouts[students[1]];
                 break;
         }
-        retVal++;
-        if (students[0]=="F"&&students[1]=="F") return retVal;
+        
+        if (students[0]==students[1]) retVal++;
     }
+    return retVal;
 }
 
 let com="LLARL";
+console.log(lineUp(com));
+com="RLR";
 console.log(lineUp(com));
