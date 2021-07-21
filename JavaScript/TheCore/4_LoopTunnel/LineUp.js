@@ -22,7 +22,8 @@ function lineUp(commands) {
                 students[1]=abouts[students[1]];
                 break;
         }
-        console.log(comArray[x],students);
+        retVal++;
+        if (students[0]=="F"&&students[1]=="F") return retVal;
     }
 }
 
