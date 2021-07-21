@@ -1,0 +1,3 @@
+function lineUp(commands) {
+
+}
