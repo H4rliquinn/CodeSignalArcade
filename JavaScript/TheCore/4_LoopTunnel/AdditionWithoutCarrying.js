@@ -1,6 +1,11 @@
 function additionWithoutCarrying(param1, param2) {
+    let retVal=[];
     let p1=param1.toString().split("").reverse();
     let p2=param2.toString().split("").reverse();
+    for (let x=0;x<Math.max(p1.length,p2.length);x++){
+        
+        
+    }
 
 }
 
