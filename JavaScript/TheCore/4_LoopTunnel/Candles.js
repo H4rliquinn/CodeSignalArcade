@@ -1,0 +1,3 @@
+function candles(candlesNumber, makeNew) {
+
+}
