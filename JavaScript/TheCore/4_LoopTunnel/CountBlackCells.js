@@ -6,9 +6,13 @@ function countBlackCells(n, m) {
         n = m;
         m = temp;
     }
-
-
-
+    let r = 0;
+    let t = 0;
+    for (let i = 0; i < n / gcd(m, n); i++) {
+      t = m / n + r;
+      retVal += Math.ceil(t);
+      r = (t - 0.000001) % 1;
+    }
     function gcd(a, b) {
       if (!b) {
         return a;
