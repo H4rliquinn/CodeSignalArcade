@@ -5,7 +5,7 @@ function isSmooth(arr) {
     } else {
         middle=arr[parseInt(arr.length/2)];
     }
-    return middle;
+    return (arr[0]==middle && arr[arr.length-1]==middle);
 }
 
 let a=[7,2,2,5,10,7]
