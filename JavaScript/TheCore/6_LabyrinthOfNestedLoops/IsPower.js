@@ -1,12 +1,14 @@
 function isPower(n) {
-    let test;
     for (x=1;x<n;x++){
-        for (y=1;x**y<=n;y++){
-            
+        for (y=1;y<n;y++){
+            if (x**y==n) {
+                return true;
+            } else if (x**y>n){
+                break;
+            }
         }
     }
-    
-    
+    return false;
 }
 
 let n=125;
