@@ -3,10 +3,16 @@ function squareDigitsSequence(a0) {
     let counter=0;
     let currentNum=a0;
 
-    while (lib[currentNum]==undefined){
-        lib[currentNum]=1;
-        
+    let digits=currentNum.toString().split("");
+    currentNum=0;
+    for (let x in digits){
+        currentNum+=parseInt(digits[x])**2;
     }
+    // while (lib[currentNum]==undefined){
+    //     lib[currentNum]=1;
+
+    // }
+    return currentNum;
 }
 
 let n=16;
