@@ -1,0 +1,3 @@
+function squareDigitsSequence(a0) {
+
+}
