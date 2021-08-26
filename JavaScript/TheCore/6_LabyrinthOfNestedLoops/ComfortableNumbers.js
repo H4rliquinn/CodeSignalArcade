@@ -1,5 +1,10 @@
 function comfortableNumbers(l, r) {
-    return sumNum(l);
+    let lib={};
+    for (let x=l;x<=r;x++){
+        lib[x]=[x-sumNum(x),x+sumNum(x)];
+    }
+
+    return lib;
 }
 
 function sumNum(n){
