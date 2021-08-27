@@ -1,9 +1,22 @@
 function weakNumbers(n) {
-    let divs={}
+    let divs={};
+    let maxWeakness=[0,0];
     for (let x=1;x<=n;x++){
         divs[x]=findDevisors(x)
     }
-    return divs;
+    for (let x=1;x<=n;x++){
+        let weakness=0;
+        for (let y=1;y<x;y++){
+            if (divs[y]>divs[x]) weakness++
+        }
+        if (maxWeakness[0]<weakness){
+            maxWeakness[0]=weakness;
+            maxWeakness[1]=1;
+        } else if (maxWeakness[0]==weakness){
+            maxWeakness[1]++;
+        }
+    }
+    return maxWeakness;
 }
 
 function findDevisors(n){
