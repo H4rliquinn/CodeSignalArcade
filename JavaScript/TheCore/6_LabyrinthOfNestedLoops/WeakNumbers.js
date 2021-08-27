@@ -1,17 +1,20 @@
 function weakNumbers(n) {
-    let divs=findDevisors(n)
+    let divs={}
+    for (let x=1;x<=n;x++){
+        divs[x]=findDevisors(x)
+    }
     return divs;
 }
 
 function findDevisors(n){
-    let retArr=[];
+    let retVal=0;;
     for (let x=1;x<=n;x++){
         if (n%x==0){
-            retArr.push(x)
+            retVal++;
         }
     }
-    return retArr;
+    return retVal;
 }
 
-let a=8;
+let a=9;
 console.log(weakNumbers(a));
