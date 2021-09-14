@@ -1,0 +1,3 @@
+function isCaseInsensitivePalindrome(inputString) {
+
+}
