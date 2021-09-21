@@ -1,19 +1,5 @@
 function isUnstablePair(filename1, filename2) {
-    let flag;
-    if (filename1<filename2) flag=true;
-
-    for (let x=0;x<Math.min(filename1.length,filename2.length)+1;x++){
-        if ((filename2[x].toLowerCase()<filename1[x].toLowerCase())==flag){
-            return true;
-
-            // if (filename1[x]==undefined) return true;
-            // if ((filename1[x]<filename2[x])!=(filename1[x].toUpperCase()<filename2[x])){
-            //    return false;
-            // }
-        } else {
-            return false;
-        }
-    }
+    return filename1 < filename2 !== filename1.toLowerCase() < filename2.toLowerCase()
 }
 
 let f1='aa',f2='AAB';
