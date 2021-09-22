@@ -1,0 +1,3 @@
+function stringsConstruction(a, b) {
+
+}
