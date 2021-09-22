@@ -2,13 +2,13 @@ function stringsConstruction(a, b) {
     let liba=charLib(a);
     let libb=charLib(b);
 
-    // let max=0;
-    // for (let x in a){
-    //     if (lib[a[x]]<max){
-    //         max=lib[a[x]]
-    //     }
-    // }
-    return [liba,libb];
+    let max=libb[a[0]]/liba[a[0]]?libb[a[0]]/liba[a[0]]:0;
+    for (let x in a){
+            if (libb[a[x]]/liba[a[x]]<max){
+                max=libb[a[x]]/liba[a[x]]
+            }
+    }
+    return max;
 }
 function charLib(s){
     let lib={};
@@ -16,7 +16,7 @@ function charLib(s){
         if (lib[s[x]]!=undefined){
             lib[s[x]]+=1;
         } else {
-            lib[b[x]]=1;
+            lib[s[x]]=1;
         }
     }
     return lib;
@@ -24,4 +24,8 @@ function charLib(s){
 
 
 let a="abc",b="abccba";
+console.log(stringsConstruction(a,b));
+a="ab",b="abcbcb";
+console.log(stringsConstruction(a,b));
+a="x",b="y";
 console.log(stringsConstruction(a,b));
