@@ -10,7 +10,7 @@ function stringsConstruction(a, b) {
                 max=libb[a[x]]/liba[a[x]]
             }
     }
-    return max;
+    return parseInt(max);
 }
 function charLib(s){
     let lib={};
