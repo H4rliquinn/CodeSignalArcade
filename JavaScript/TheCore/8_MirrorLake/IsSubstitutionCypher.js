@@ -11,3 +11,7 @@ function isSubstitutionCipher(string1, string2) {
  return true;
 }
 
+let s1="aacb",s2="aabc";
+console.log(isSubstitutionCipher(s1,s2));
+s2="acbb";
+console.log(isSubstitutionCipher(s1,s2));
