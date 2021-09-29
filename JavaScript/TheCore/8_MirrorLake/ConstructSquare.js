@@ -1,7 +1,12 @@
 function constructSquare(s) {
     let sa=s.split("");
-    sa=permutationArray(sa,[],[])
-    return sa;
+    let sap=permutationArray(sa,[],[]);
+
+    for (let x=31623;x>0;x--){
+        let pos=x*x;
+        if (pos.toString().split("").length==sa.length) console.log(pos);
+    }
+    return sap;
 }
 
 function permutationArray(ia,curr,cache){
