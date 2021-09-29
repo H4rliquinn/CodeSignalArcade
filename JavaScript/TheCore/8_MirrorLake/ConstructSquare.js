@@ -4,9 +4,18 @@ function constructSquare(s) {
 
     for (let x=31623;x>0;x--){
         let pos=x*x;
-        if (pos.toString().split("").length==sa.length) console.log(pos);
+        if (pos.toString().split("").length==sa.length) {
+            if (checkMatch(pos.toString().split(""),sap)){
+                return true;
+            }
+        }
     }
     return sap;
+}
+
+function checkMatch(target,perms){
+    let lib={};
+    return true;
 }
 
 function permutationArray(ia,curr,cache){
