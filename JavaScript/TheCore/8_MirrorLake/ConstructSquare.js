@@ -15,6 +15,10 @@ function constructSquare(s) {
 
 function checkMatch(target,perms){
     let lib={};
+    for (let x=0;x<perms.length;x++){
+        
+        console.log(target,perms[x]);
+    }
     return true;
 }
 
